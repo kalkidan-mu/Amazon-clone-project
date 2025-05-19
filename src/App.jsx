@@ -1,20 +1,13 @@
 import { useState } from "react";
 
 import "./App.css";
-import Header from "./components/Header/Header";
-import CarouselEffect from "./components/Carousel/Carousel";
-import Catagory from "./components/Category/Category";
-import MyCategory from "./components/Category/mine/MyCategory";
-import Product from "./components/Product/Product";
+import Routering from "./Router";
+
 
 function App() {
   return (
     <>
-      <Header />
-      <CarouselEffect />
-      <Catagory/>
-      {/* <MyCategory /> */}
-      <Product/>
+    <Routering/>
     </>
   );
 }
