@@ -5,9 +5,11 @@ import axisos from "axios"
 import { productUrl } from '../../Api/endPoints';
 import styles from "./results.module.css"
 import ProductCard from '../../components/Product/ProductCard';
+import Loader from '../../components/Loader/Loader';
 const Results = () => {
   const [results,setResults]=useState([])
   const {categoryName}=useParams()
+  const [isLoading, setIsLoading] = useState(false);
 useEffect(()=>{
   axisos.get(`${productUrl}/products/category/${categoryName}`)
   .then((res)=>{
@@ -26,6 +28,7 @@ useEffect(()=>{
   <h1 style={{padding:"30px"}}>Results</h1>
   <p style={{padding:"30px"}}>Category / {categoryName}</p>
   <hr />
+  {isLoading ? <Loader/> : (
   <div className={styles.productsContainer}>
 {
   results?.map((product)=>(
@@ -37,6 +40,7 @@ useEffect(()=>{
 }
 
   </div>
+  )}
 </section>
     </Layout>
   )
