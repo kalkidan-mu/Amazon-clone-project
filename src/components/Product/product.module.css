@@ -48,3 +48,33 @@
 .productsContainer section{
     margin: 0 auto;
 }
+
+.productFlexed{
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.productFlexed h3{
+    padding: 20px,0;
+}
+.productFlexed  .toCartButton{
+    display: block;
+    position: static;
+    width: 150px;
+    margin-right: 40px;
+}
+.productFlexed{
+    height: 50vh;
+}
+.productFlexed img{
+  width: 300px !important;
+height: auto;
+}
+@media screen and (max-width: 768px) {
+    .productFlexed{
+        display: flex;
+        flex-direction: column;
+    }
+}
