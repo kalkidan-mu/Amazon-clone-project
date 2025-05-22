@@ -11,11 +11,14 @@ const Results = () => {
   const {categoryName}=useParams()
   const [isLoading, setIsLoading] = useState(false);
 useEffect(()=>{
+  setIsLoading(true)
   axisos.get(`${productUrl}/products/category/${categoryName}`)
   .then((res)=>{
     setResults(res.data)
+    setIsLoading(false);
   }).catch((err)=>{
     console.log(err)
+    setIsLoading(false);
   })
 
 },[])
