@@ -27,26 +27,26 @@ useEffect(()=>{
 
   return (
     <Layout>
-<section>
-  <h1 style={{padding:"30px"}}>Results</h1>
-  <p style={{padding:"30px"}}>Category / {categoryName}</p>
-  <hr />
-  {isLoading ? <Loader/> : (
-  <div className={styles.productsContainer}>
-{
-  results?.map((product)=>(
-    <ProductCard
-    key={product.id}
-    product={product}
-    />
-  ))
-}
-
-  </div>
-  )}
-</section>
+      <section>
+        <h1 style={{ padding: "30px" }}>Results</h1>
+        <p style={{ padding: "30px" }}>Category / {categoryName}</p>
+        <hr />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <div className={styles.productsContainer}>
+            {results?.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                renderAdd={true}
+              />
+            ))}
+          </div>
+        )}
+      </section>
     </Layout>
-  )
+  );
 }
 
 export default Results
