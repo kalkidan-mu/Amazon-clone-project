@@ -6,7 +6,27 @@
 }
 .container img {
     width: 100px !important;
-
+}
+.cartProduct{
+    display: flex;
+    gap: 10px;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.buttonContainer button{
+    padding: 5px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+}
+.buttonContainer button:hover svg{
+    background-color:var(--primary-color);
 }
 .cartContainer{
     padding: 20px;
