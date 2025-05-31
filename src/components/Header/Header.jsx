@@ -7,8 +7,11 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
 import {Link} from "react-router-dom"
 import { DataContext } from '../DataProvider/DataProvider';
+import {auth} from "../../Utility/firebase"
+
+
 const Header = () => {
- const[{basket},dispatch]= useContext(DataContext)
+ const[{user,basket},dispatch]= useContext(DataContext)
  const totalItem=basket.reduce((amount,item)=>{
   return item.amount +amount
  },0)
@@ -36,17 +39,17 @@ const Header = () => {
             </div>
           </div>
 
-            {/* search*/}
+          {/* search*/}
           <div className={classes.search}>
             <select name="" id="">
               <option value="">All</option>
             </select>
-            <input type="text"/>
-            <BsSearch size={25} />
+            <input type="text" />
+            <BsSearch size={38} />
           </div>
           {/* other section*/}
           <div className={classes.order_container}>
-            <Link to='' className={classes.language}>
+            <Link to="" className={classes.language}>
               <img src={flag} alt="US flag" />
               {/* ing addrss https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg */}
               <select>
@@ -54,9 +57,20 @@ const Header = () => {
               </select>
             </Link>
             {/* three components */}
-            <Link to="/auth">
-                <p>Sign In</p>
-                <span>Account & Lists</span>
+            <Link to={!user && "/auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]} </p>
+                    <span onClick={()=>auth.signOut()}>Sign Out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Sign In</p>
+                    <span>"Account & Lists"</span>
+                  </>
+                )}
+              </div>
             </Link>
             {/* orders */}
             <Link to="/orders">
@@ -65,13 +79,13 @@ const Header = () => {
             </Link>
             {/* cart */}
             <Link to={"/cart"} className={classes.cart}>
-              <BiCart size={35}/>
+              <BiCart size={35} />
               <span>{totalItem}</span>
             </Link>
           </div>
         </div>
       </section>
-      <LowerHeader/>
+      <LowerHeader />
     </section>
   );
 }
