@@ -1,0 +1,50 @@
+.paymentHeader{
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(234, 237, 237);
+}
+.payment{
+    padding: 30px;
+}
+.flex{
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+}
+.flex h3{
+    min-width: 300px;
+}
+.flex img{
+    width: 80px !important
+}
+.flex div{
+    height: auto !important;
+}
+.paymentCardContainer{
+    max-width: 350px;
+    width: 100%;
+}
+.paymentDetails{
+font-size: 20px;
+}
+ .paymentPrice{
+    padding: 20px;
+ }
+ .paymentPrice > div {
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+ }
+ .paymentDetails button{
+    margin-top:15px ;
+    width: 100%;
+    border: none;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding:8px 10px ;
+    cursor: pointer;
+ }
+ .paymentDetails button:hover{
+    background-color: var(--primary-shade);
+ }
