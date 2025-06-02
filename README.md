@@ -1,12 +1,44 @@
-# React + Vite
+🛒 Amazon Clone
+A simple Amazon-inspired e-commerce site built with React,Firebase, and Stripe.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗[Live Demo](https://magical-squirrel-20ed74.netlify.app)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
+User Authentication (Firebase)
 
-## Expanding the ESLint configuration
+Product Listing & Cart System
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Stripe Checkout Integration
+
+Responsive Design
+
+🧰 Tech Stack
+Frontend: React, 
+
+Auth & DB: Firebase
+
+Payments: Stripe
+
+Deployment: Netlify
+
+📦 Setup
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/amazon-clone.git
+cd amazon-clone
+npm install
+npm start
+🔐 .env Example
+ini
+Copy
+Edit
+REACT_APP_FIREBASE_API_KEY=your_key
+REACT_APP_STRIPE_PUBLIC_KEY=your_key
+👤 Author
+KALKIDAN 
+
+🙌 Thanks for checking it out!
+Happy Coding! ☕💻
+
