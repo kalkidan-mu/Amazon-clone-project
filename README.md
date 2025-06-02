@@ -1,7 +1,8 @@
 🛒 Amazon Clone
 A simple Amazon-inspired e-commerce site built with React,Firebase, and Stripe.
 
-🔗[My Deployed Website](magical-squirrel-20ed74.netlify.app)
+🔗[Live Demo](https://magical-squirrel-20ed74.netlify.app)
+
 
 🚀 Features
 User Authentication (Firebase)
