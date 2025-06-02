@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 
 import styles from "./auth.module.css"
-import { Link,useNavigate  } from 'react-router-dom';
+import { Link,useNavigate,useLocation  } from 'react-router-dom';
 import { auth } from '../../Utility/firebase';
 import { signInWithEmailAndPassword,createUserWithEmailAndPassword} from 'firebase/auth';
 import {DataContext} from "../../components/DataProvider/DataProvider"
@@ -18,8 +18,11 @@ const [loading,setLoading]=useState({
 })
 
 const[{user},dispatch]=useContext(DataContext)
-console.log(user)
+
 const navigate=useNavigate()
+const navStateData=useLocation()
+console.log(navStateData)
+
 const authHandler= async (e)=>{
 e.preventDefault()
 console.log(e.target.name)
@@ -32,7 +35,7 @@ if(e.target.name=='signin'){
         user:userInfo.user,
       })
       setLoading({ ...loading, signin: false });
-      navigate("/")
+      navigate(navStateData?.state ?.redirect ||"/")
     }).catch((err)=>{
    setError(err.message)
    setLoading({ ...loading, signin: false});
@@ -45,7 +48,7 @@ createUserWithEmailAndPassword(auth,email,password).then((userInfo)=>{
     user: userInfo.user,
   });
   setLoading({ ...loading, signup: false });
-  navigate("/");
+  navigate(navStateData?.state?.redirect||"/");
 }).catch((err)=>{
   setError(err.message);
   setLoading({ ...loading, signup: false});
@@ -66,6 +69,11 @@ createUserWithEmailAndPassword(auth,email,password).then((userInfo)=>{
       </Link>
       <div className={styles.loginContainer}>
         <h1>Sign-in</h1>
+        {
+          navStateData?.state?.msg && (
+            <small style={{padding:"5px",textAlign:"center",color:"red",fontWeight:"bold"}}>{navStateData?.state?.msg}</small>
+          )
+        }
         <form action="">
           <div>
             <label htmlFor="email">Email</label>
