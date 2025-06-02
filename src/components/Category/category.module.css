@@ -25,26 +25,13 @@
     color: rgb(9,132, 209);
 }
 .categoryWrapper {
-    overflow: hidden;
     position: relative;
     margin-top: -10%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+    gap: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1600px;
     place-items: center;
 }
-/* .categoryWrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem; /* add spacing between items */
-    /* padding: 1rem;
-    margin-top: -10%;
-    place-items: center;
-  }
-   */ 
-   @media screen and (max-width: 746px) {
-    .categoryWrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
